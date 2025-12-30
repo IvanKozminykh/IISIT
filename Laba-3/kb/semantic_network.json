@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "domain": "Выбор видеокарт RTX",
+    "model": "semantic_network"
+  },
+  "nodes": [
+    { "id": "GPU", "type": "class", "label": "Видеокарта" },
+    { "id": "RTX-50-series", "type": "class", "label": "Серия RTX 50" },
+    { "id": "RTX-5090", "type": "gpu", "label": "RTX-5090", "rank": 1 },
+    { "id": "RTX-5080", "type": "gpu", "label": "RTX-5080", "rank": 2 },
+    { "id": "RTX-5070-ti", "type": "gpu", "label": "RTX-5070 Ti", "rank": 3 },
+    { "id": "RTX-5070", "type": "gpu", "label": "RTX-5070", "rank": 4 },
+    { "id": "RTX-5060-ti", "type": "gpu", "label": "RTX-5060 Ti", "rank": 5 },
+
+    { "id": "increased-data-flow", "type": "feature", "label": "Увеличенный поток данных" },
+    { "id": "increased-memory-module-size", "type": "feature", "label": "Увеличенный размер модуля памяти" },
+    { "id": "improved-heat-dissipation-system", "type": "feature", "label": "Улучшенная система отвода тепла" },
+    { "id": "high-air-flow-force", "type": "feature", "label": "Большая сила потока воздуха" },
+    { "id": "increased-cost-of-components", "type": "feature", "label": "Повышенная стоимость компонентов" },
+    { "id": "compactness", "type": "feature", "label": "Компактность" },
+    { "id": "faintly-expressed-elements", "type": "feature", "label": "Слабовыраженные элементы" },
+    { "id": "minimum-set-of-components", "type": "feature", "label": "Минимальный набор компонентов" },
+
+    { "id": "working-with-ai", "type": "feature", "label": "Работа с ИИ" },
+    { "id": "improved-cooling-system", "type": "feature", "label": "Улучшенная система охлаждения" },
+    { "id": "budget-over-hight", "type": "feature", "label": "Бюджет свыше 100к" },
+    { "id": "minimalistic-look", "type": "feature", "label": "Минималистичный вид" },
+    { "id": "minimum-cost", "type": "feature", "label": "Минимальная стоимость" }
+  ],
+  "edges": [
+    { "from": "RTX-50-series", "to": "GPU", "relation": "is-a" },
+    { "from": "RTX-5090", "to": "RTX-50-series", "relation": "is-a" },
+    { "from": "RTX-5080", "to": "RTX-50-series", "relation": "is-a" },
+    { "from": "RTX-5070-ti", "to": "RTX-50-series", "relation": "is-a" },
+    { "from": "RTX-5070", "to": "RTX-50-series", "relation": "is-a" },
+    { "from": "RTX-5060-ti", "to": "RTX-50-series", "relation": "is-a" },
+
+    { "from": "RTX-5090", "to": "working-with-ai", "relation": "has-feature" },
+    { "from": "RTX-5090", "to": "improved-cooling-system", "relation": "has-feature" },
+    { "from": "RTX-5090", "to": "budget-over-hight", "relation": "has-feature" },
+
+    { "from": "RTX-5080", "to": "improved-cooling-system", "relation": "has-feature" },
+    { "from": "RTX-5080", "to": "budget-over-hight", "relation": "has-feature" },
+
+    { "from": "RTX-5070-ti", "to": "budget-over-hight", "relation": "has-feature" },
+    { "from": "RTX-5070-ti", "to": "minimalistic-look", "relation": "has-feature" },
+
+    { "from": "RTX-5070", "to": "minimalistic-look", "relation": "has-feature" },
+
+    { "from": "RTX-5060-ti", "to": "minimalistic-look", "relation": "has-feature" },
+    { "from": "RTX-5060-ti", "to": "minimum-cost", "relation": "has-feature" },
+
+    { "from": "increased-data-flow", "to": "working-with-ai", "relation": "contributes-to" },
+    { "from": "increased-memory-module-size", "to": "working-with-ai", "relation": "contributes-to" },
+
+    { "from": "improved-heat-dissipation-system", "to": "improved-cooling-system", "relation": "part-of" },
+    { "from": "high-air-flow-force", "to": "improved-cooling-system", "relation": "part-of" },
+
+    { "from": "increased-cost-of-components", "to": "budget-over-hight", "relation": "contributes-to" },
+
+    { "from": "increased-cost-of-components", "to": "minimalistic-look", "relation": "contributes-to" },
+    { "from": "compactness", "to": "minimalistic-look", "relation": "contributes-to" },
+    { "from": "faintly-expressed-elements", "to": "minimalistic-look", "relation": "contributes-to" },
+
+    { "from": "faintly-expressed-elements", "to": "minimum-cost", "relation": "contributes-to" },
+    { "from": "minimum-set-of-components", "to": "minimum-cost", "relation": "contributes-to" }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "rules": [
+    {
+      "id": "r-increased-data-flow",
+      "salience": 4000,
+      "when": {
+        "any": [
+          { "fact": "bandwidth-increased", "op": ">=", "value": 512 },
+          { "fact": "maximum-throughput-increased", "op": ">", "value": 1000 }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "increased-data-flow", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-increased-memory-module-size",
+      "salience": 3900,
+      "when": {
+        "any": [
+          { "fact": "memory-module-increased", "op": "==", "value": "yes" },
+          { "fact": "number-memory-modules-increased", "op": "==", "value": "yes" }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "increased-memory-module-size", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-improved-heat-dissipation-system",
+      "salience": 3800,
+      "when": {
+        "any": [
+          { "fact": "enlarged-radiators", "op": "==", "value": "yes" },
+          { "fact": "evaporative-chamber", "op": "==", "value": "yes" }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "improved-heat-dissipation-system", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-high-air-flow-force",
+      "salience": 3700,
+      "when": {
+        "any": [
+          { "fact": "high-fan-speed", "op": ">", "value": 2600 },
+          { "fact": "number-fans-increased", "op": ">", "value": 3 }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "high-air-flow-force", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-increased-cost-of-components",
+      "salience": 3600,
+      "when": {
+        "any": [
+          { "fact": "premium-brand", "op": "==", "value": "yes" },
+          { "fact": "beautiful-performance", "op": "==", "value": "yes" }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "increased-cost-of-components", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-compactness",
+      "salience": 3500,
+      "when": {
+        "all": [
+          { "fact": "micro-atx-board", "op": "==", "value": "yes" },
+          { "fact": "reduced-case-size", "op": "==", "value": "yes" }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "compactness", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-faintly-expressed-elements",
+      "salience": 3400,
+      "when": {
+        "all": [
+          { "fact": "no-backlight", "op": "==", "value": "yes" }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "faintly-expressed-elements", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-minimum-set-of-components",
+      "salience": 3300,
+      "when": {
+        "any": [
+          { "fact": "no-backlight", "op": "==", "value": "yes" },
+          { "fact": "minimum-cooling-system-removal", "op": "==", "value": "yes" }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "minimum-set-of-components", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-working-with-ai",
+      "salience": 3200,
+      "when": {
+        "all": [
+          { "fact": "increased-data-flow", "op": "==", "value": "yes" },
+          { "fact": "increased-memory-module-size", "op": "==", "value": "yes" }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "working-with-ai", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-improved-cooling-system",
+      "salience": 3100,
+      "when": {
+        "all": [
+          { "fact": "improved-heat-dissipation-system", "op": "==", "value": "yes" },
+          { "fact": "high-air-flow-force", "op": "==", "value": "yes" }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "improved-cooling-system", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-budget-over-hight",
+      "salience": 3000,
+      "when": {
+        "all": [
+          { "fact": "increased-cost-of-components", "op": "==", "value": "yes" }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "budget-over-hight", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-minimalistic-look",
+      "salience": 2900,
+      "when": {
+        "any": [
+          { "fact": "increased-cost-of-components", "op": "==", "value": "yes" },
+          { "fact": "compactness", "op": "==", "value": "yes" },
+          { "fact": "faintly-expressed-elements", "op": "==", "value": "yes" }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "minimalistic-look", "value": "yes" } }
+      ]
+    },
+    {
+      "id": "r-minimum-cost",
+      "salience": 2800,
+      "when": {
+        "all": [
+          { "fact": "faintly-expressed-elements", "op": "==", "value": "yes" },
+          { "fact": "minimum-set-of-components", "op": "==", "value": "yes" }
+        ]
+      },
+      "then": [
+        { "assert": { "fact": "minimum-cost", "value": "yes" } }
+      ]
+    }
+  ]
+}

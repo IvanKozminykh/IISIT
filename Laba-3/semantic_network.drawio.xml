@@ -1,0 +1,159 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="SemanticNetwork">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="GPU" value="GPU" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RTX-50-series" value="RTX-50-series" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="60" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="RTX-5090" value="RTX-5090" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RTX-5080" value="RTX-5080" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="100" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RTX-5070-ti" value="RTX-5070-ti" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="160" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RTX-5070" value="RTX-5070" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="220" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RTX-5060-ti" value="RTX-5060-ti" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="280" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="working-with-ai" value="working-with-ai" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="30" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="improved-cooling-system" value="improved-cooling-system" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="90" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="budget-over-hight" value="budget-over-hight" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="150" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="minimalistic-look" value="minimalistic-look" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="210" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="minimum-cost" value="minimum-cost" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="270" width="150" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="increased-data-flow" value="increased-data-flow" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="20" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="increased-memory-module-size" value="increased-memory-module-size" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="70" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="improved-heat-dissipation-system" value="improved-heat-dissipation-system" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="120" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="high-air-flow-force" value="high-air-flow-force" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="170" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="increased-cost-of-components" value="increased-cost-of-components" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="220" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="compactness" value="compactness" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="270" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="faintly-expressed-elements" value="faintly-expressed-elements" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="320" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="minimum-set-of-components" value="minimum-set-of-components" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="370" width="240" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" value="is-a" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-50-series" target="GPU">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="is-a" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5090" target="RTX-50-series">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="is-a" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5080" target="RTX-50-series">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="is-a" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5070-ti" target="RTX-50-series">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="is-a" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5070" target="RTX-50-series">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="is-a" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5060-ti" target="RTX-50-series">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e7" value="has-feature" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5090" target="working-with-ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="has-feature" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5090" target="improved-cooling-system">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="has-feature" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5090" target="budget-over-hight">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e10" value="has-feature" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5080" target="improved-cooling-system">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="has-feature" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5080" target="budget-over-hight">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e12" value="has-feature" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5070-ti" target="budget-over-hight">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="has-feature" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5070-ti" target="minimalistic-look">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e14" value="has-feature" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5070" target="minimalistic-look">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e15" value="has-feature" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5060-ti" target="minimalistic-look">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="has-feature" style="endArrow=classic;html=1;" edge="1" parent="1" source="RTX-5060-ti" target="minimum-cost">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e17" value="contributes-to" style="endArrow=classic;html=1;" edge="1" parent="1" source="increased-data-flow" target="working-with-ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="contributes-to" style="endArrow=classic;html=1;" edge="1" parent="1" source="increased-memory-module-size" target="working-with-ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" value="part-of" style="endArrow=classic;html=1;" edge="1" parent="1" source="improved-heat-dissipation-system" target="improved-cooling-system">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" value="part-of" style="endArrow=classic;html=1;" edge="1" parent="1" source="high-air-flow-force" target="improved-cooling-system">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" value="contributes-to" style="endArrow=classic;html=1;" edge="1" parent="1" source="increased-cost-of-components" target="budget-over-hight">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" value="contributes-to" style="endArrow=classic;html=1;" edge="1" parent="1" source="increased-cost-of-components" target="minimalistic-look">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" value="contributes-to" style="endArrow=classic;html=1;" edge="1" parent="1" source="compactness" target="minimalistic-look">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" value="contributes-to" style="endArrow=classic;html=1;" edge="1" parent="1" source="faintly-expressed-elements" target="minimalistic-look">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25" value="contributes-to" style="endArrow=classic;html=1;" edge="1" parent="1" source="faintly-expressed-elements" target="minimum-cost">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e26" value="contributes-to" style="endArrow=classic;html=1;" edge="1" parent="1" source="minimum-set-of-components" target="minimum-cost">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

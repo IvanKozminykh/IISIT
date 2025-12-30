@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "fact": "bandwidth-increased",
+      "type": "int",
+      "prompt": "Введите значение пропускной шины в битах (например, 256): "
+    },
+    {
+      "fact": "maximum-throughput-increased",
+      "type": "int",
+      "prompt": "Введите максимальную пропускную способность, например 1000 Гбайт/сек: "
+    },
+    {
+      "fact": "high-fan-speed",
+      "type": "int",
+      "prompt": "Введите скорость оборотов вентиляторов (например 3200): "
+    },
+    {
+      "fact": "number-fans-increased",
+      "type": "int",
+      "prompt": "Введите количество вентиляторов (например 3): "
+    },
+    {
+      "fact": "memory-module-increased",
+      "type": "bool",
+      "prompt": "Увеличен объем одного модуля памяти? (yes/no): "
+    },
+    {
+      "fact": "number-memory-modules-increased",
+      "type": "bool",
+      "prompt": "Увеличенное количество модулей памяти? (yes/no): "
+    },
+    {
+      "fact": "enlarged-radiators",
+      "type": "bool",
+      "prompt": "Увеличенные радиаторы? (yes/no): "
+    },
+    {
+      "fact": "evaporative-chamber",
+      "type": "bool",
+      "prompt": "Присутствует испарительная камера? (yes/no): "
+    },
+    {
+      "fact": "premium-brand",
+      "type": "bool",
+      "prompt": "Премиальный бренд? (yes/no): "
+    },
+    {
+      "fact": "beautiful-performance",
+      "type": "bool",
+      "prompt": "Красивое исполнение? (yes/no): "
+    },
+    {
+      "fact": "micro-atx-board",
+      "type": "bool",
+      "prompt": "Micro-ATX плата? (yes/no): "
+    },
+    {
+      "fact": "reduced-case-size",
+      "type": "bool",
+      "prompt": "Уменьшенный формат корпуса? (yes/no): "
+    },
+    {
+      "fact": "no-backlight",
+      "type": "bool",
+      "prompt": "Отсутствие подсветки? (yes/no): "
+    },
+    {
+      "fact": "minimum-cooling-system-removal",
+      "type": "bool",
+      "prompt": "Минимальная система охлаждения? (yes/no): "
+    }
+  ]
+}
