@@ -7,17 +7,20 @@ from es.working_memory import FactSource, WorkingMemory
 
 @dataclass(frozen=True)
 class MatchResult:
+    """Результат сопоставления признаков и рекомендация GPU."""
     recommendation: str
     matched_features: List[str]
 
 
 class SemanticMatcher:
-    """Matches inferred features to GPU nodes in the semantic network."""
+    """Сопоставляет выведенные признаки с GPU-узлами в сети."""
 
     def __init__(self, network: SemanticNetwork) -> None:
+        """Сохраняет семантическую сеть для поиска рекомендаций."""
         self._network = network
 
     def recommend(self, wm: WorkingMemory) -> Optional[MatchResult]:
+        """Возвращает рекомендацию GPU на основе активных признаков."""
         active_features = self._collect_active_features(wm)
         candidates = []
         for gpu in self._network.nodes_by_type("gpu"):
@@ -34,14 +37,17 @@ class SemanticMatcher:
         return MatchResult(recommendation=gpu_id, matched_features=matched)
 
     def assert_recommendation(self, wm: WorkingMemory, result: MatchResult) -> None:
+        """Записывает рекомендацию в рабочую память как выведенный факт."""
         premises = [f"{name}=yes" for name in result.matched_features]
         source = FactSource(rule_id="semantic-match", premises=premises)
         wm.assert_fact("recommendation", result.recommendation, source)
 
     def _required_features(self, gpu_id: str) -> Set[str]:
+        """Возвращает набор признаков, требуемых для GPU-узла."""
         edges = self._network.edges_from(gpu_id, "has-feature")
         return {edge.target for edge in edges}
 
     @staticmethod
     def _collect_active_features(wm: WorkingMemory) -> Set[str]:
+        """Собирает признаки со значением yes из рабочей памяти."""
         return {name for name, value in wm.facts().items() if value == "yes"}

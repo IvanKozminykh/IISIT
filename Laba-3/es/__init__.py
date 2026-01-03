@@ -1,1 +1,1 @@
-"""Semantic network expert system modules."""
+"""Модули ЭС на семантической сети."""

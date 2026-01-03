@@ -9,6 +9,7 @@ from es.working_memory import WorkingMemory
 
 
 def choose_strategy() -> str:
+    """Запрашивает выбор стратегии разрешения конфликтов."""
     strategies = {
         "1": ("salience", "Приоритет по salience"),
         "2": ("specificity", "Приоритет по количеству условий"),
@@ -29,6 +30,7 @@ def choose_strategy() -> str:
 
 
 def main() -> None:
+    """Загружает БЗ, собирает факты, выполняет вывод и печатает объяснение."""
     kb_path = Path(__file__).parent / "kb" / "knowledge_base.json"
     kb = KnowledgeBase.from_json(str(kb_path))
 

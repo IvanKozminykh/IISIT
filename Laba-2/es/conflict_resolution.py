@@ -7,18 +7,22 @@ from es.working_memory import WorkingMemory
 
 @dataclass(frozen=True)
 class Activation:
+    """Описывает активированное правило с расчетными метриками."""
+
     rule: Rule
     specificity: int
     recency: int
 
 
 class ConflictResolver:
-    """Resolves conflicts between rule activations using different strategies."""
+    """Разрешает конфликты между активированными правилами по стратегии."""
 
     def __init__(self, strategy: str) -> None:
+        """Сохраняет выбранную стратегию разрешения конфликтов."""
         self.strategy = strategy
 
     def choose(self, activations: List[Activation]) -> Activation:
+        """Выбирает одно правило на основе текущей стратегии."""
         if not activations:
             raise ValueError("No activations to resolve")
 
@@ -44,5 +48,6 @@ class ConflictResolver:
 
 
 def build_activation(rule: Rule, wm: WorkingMemory, specificity: int, fact_names: List[str]) -> Activation:
+    """Формирует активирование и вычисляет новизну по фактам условий."""
     recency = max((wm.timestamp(name) for name in fact_names), default=0)
     return Activation(rule=rule, specificity=specificity, recency=recency)

@@ -5,18 +5,21 @@ from es.working_memory import WorkingMemory
 
 
 class Questionnaire:
-    """Asks user questions and writes base facts to working memory."""
+    """Опрос пользователя и запись исходных фактов."""
 
     def __init__(self, questions: List[Question], wm: WorkingMemory) -> None:
+        """Сохраняет список вопросов и рабочую память."""
         self._questions = questions
         self._wm = wm
 
     def conduct(self) -> None:
+        """Проходит по вопросам и сохраняет ответы как факты."""
         for question in self._questions:
             value = self._ask(question)
             self._wm.assert_fact(question.fact, value, None)
 
     def _ask(self, question: Question) -> Any:
+        """Запрашивает ответ, пока он не соответствует типу вопроса."""
         while True:
             raw = input(question.prompt).strip().lower()
             if question.qtype == "int":

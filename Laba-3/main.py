@@ -11,6 +11,7 @@ from es.working_memory import WorkingMemory
 
 
 def choose_strategy() -> str:
+    """Запрашивает выбор стратегии разрешения конфликтов для правил."""
     strategies = {
         "1": ("salience", "Приоритет по salience"),
         "2": ("specificity", "Приоритет по количеству условий"),
@@ -31,6 +32,7 @@ def choose_strategy() -> str:
 
 
 def run_queries(network: SemanticNetwork, explainer: Explanation) -> None:
+    """Запускает интерактивные запросы к семантической сети."""
     print("\nЗапросы к семантической сети:")
     print("  1) is-a (является ли A подтипом B)")
     print("  2) has-relation (есть ли отношение A -R-> B)")
@@ -67,6 +69,7 @@ def run_queries(network: SemanticNetwork, explainer: Explanation) -> None:
 
 
 def main() -> None:
+    """Загружает БЗ/сеть, запускает вывод, объяснение и запросы."""
     base_path = Path(__file__).parent
     kb = KnowledgeBase.from_files(
         str(base_path / "kb" / "questions.json"),

@@ -6,9 +6,10 @@ from es.working_memory import FactSource, WorkingMemory
 
 
 class InferenceEngine:
-    """Forward chaining inference engine for production rules."""
+    """Механизм прямого вывода для продукционных правил."""
 
     def __init__(self, rules: List[Rule], resolver: ConflictResolver, wm: WorkingMemory) -> None:
+        """Сохраняет правила, стратегию конфликтов и рабочую память."""
         self._rules = rules
         self._resolver = resolver
         self._wm = wm
@@ -16,6 +17,7 @@ class InferenceEngine:
         self._fired_set: Set[str] = set()
 
     def run(self, max_steps: int = 100) -> None:
+        """Запускает прямой вывод до исчерпания правил или лимита шагов."""
         steps = 0
         while steps < max_steps:
             activations = []
@@ -35,6 +37,7 @@ class InferenceEngine:
             steps += 1
 
     def _fire(self, rule: Rule) -> None:
+        """Применяет действия правила и добавляет новые факты."""
         fact_names = self._collect_fact_names(rule.when)
         premises = [f"{name}={self._wm.get_fact(name)}" for name in fact_names]
         source = FactSource(rule_id=rule.rule_id, premises=premises)
@@ -50,6 +53,7 @@ class InferenceEngine:
         self.fired_rules.append(rule.rule_id)
 
     def _evaluate(self, expr: Dict[str, Any]) -> bool:
+        """Проверяет дерево условий правила относительно фактов."""
         if "all" in expr:
             return all(self._evaluate(item) for item in expr["all"])
         if "any" in expr:
@@ -69,6 +73,7 @@ class InferenceEngine:
 
     @staticmethod
     def _compare(left: Any, op: str, right: Any) -> bool:
+        """Сравнивает значения по оператору из условия правила."""
         if op == "==":
             return left == right
         if op == "!=":
@@ -84,6 +89,7 @@ class InferenceEngine:
         raise ValueError(f"Unsupported operator: {op}")
 
     def _collect_fact_names(self, expr: Dict[str, Any]) -> List[str]:
+        """Собирает список фактов, упомянутых в условиях правила."""
         if "all" in expr:
             names = []
             for item in expr["all"]:
@@ -100,6 +106,7 @@ class InferenceEngine:
 
     @staticmethod
     def _dedupe(names: List[str]) -> List[str]:
+        """Удаляет дубликаты, сохраняя порядок фактов."""
         seen = set()
         result = []
         for name in names:

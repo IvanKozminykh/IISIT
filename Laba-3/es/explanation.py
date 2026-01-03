@@ -5,23 +5,27 @@ from es.working_memory import WorkingMemory
 
 
 class Explanation:
-    """Generates explanation chains from working memory and network paths."""
+    """Строит цепочки объяснения и пути в семантической сети."""
 
     def __init__(self, wm: WorkingMemory) -> None:
+        """Сохраняет рабочую память для построения объяснений."""
         self._wm = wm
 
     def explain_fact(self, fact: str) -> List[str]:
+        """Возвращает список строк объяснения для выбранного факта."""
         lines: List[str] = []
         self._build_chain(fact, lines, set(), 0)
         return lines
 
     def explain_path(self, network: SemanticNetwork, source: str, target: str) -> Optional[str]:
+        """Возвращает путь между узлами сети в виде строки."""
         path = network.find_path(source, target)
         if not path:
             return None
         return " -> ".join(path)
 
     def _build_chain(self, fact: str, lines: List[str], visited: Set[str], depth: int) -> None:
+        """Рекурсивно раскрывает предпосылки и строит дерево объяснения."""
         if fact in visited:
             return
         visited.add(fact)
